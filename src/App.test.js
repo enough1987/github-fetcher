@@ -31,3 +31,13 @@ test('decrement counter', () => {
   expect( wrapper.state('counter') )
     .toEqual(8);
 });
+
+test('counter should not be less than zero', () => {
+  const wrapper = setup({}, { counter: 1 });
+  const botton = find(wrapper, 'btn-decrement');
+  botton.simulate('click');
+  botton.simulate('click');
+
+  expect( wrapper.state('counter') )
+    .toEqual(0);
+});

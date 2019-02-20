@@ -21,6 +21,9 @@ class App extends Component {
 
   decrement = (a, b) => {
     this.setState((state) => {
+      if(!state.counter) {
+        return {};
+      }
       return {
         counter: state.counter - 1
       };
