@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { findByAttr } from "./testUtils";
-import App from './App';
+import { App } from './App';
 
 const setup = (props = {}, state = {}) => {
   const wrapper = shallow(<App {...props}/>);
@@ -31,6 +31,7 @@ test('decrement counter', () => {
 
 test('counter should not be less than zero', () => {
   const wrapper = setup({}, { counter: 1 });
+  console.log( wrapper.html() );
   const botton = findByAttr(wrapper, 'btn-decrement');
   botton.simulate('click');
   botton.simulate('click');

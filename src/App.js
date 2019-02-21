@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
 import './App.css';
+import Congrats from './Congrats';
+import GuessList from './GuessList';
+import correctGuess from './store/actions/guesses';
 
-class App extends Component {
+export class App extends Component {
 
   constructor(props) {
     super(props);
@@ -31,21 +35,40 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props);
+
     return (
       <div className="App">
        
-        <buttom data-test="btn-increment" 
-          onClick={ this.increment }>
-          increment
-        </buttom>  
-        <buttom data-test="btn-decrement" 
-          onClick={ this.decrement }>
-          decrement
-        </buttom>  
-        <h1> current counter is { this.state.counter } </h1>
+        <div> 
+          <buttom data-test="btn-increment" 
+            onClick={ this.increment }>
+            increment
+          </buttom>  
+          <buttom data-test="btn-decrement" 
+            onClick={ this.decrement }>
+            decrement
+          </buttom>  
+          <h1> current counter is { this.state.counter } </h1>
+        </div>
+
+        <Congrats show={ false } />
+        <GuessList guesses={ [] } />
+
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  guesses: state.guesses
+})
+
+const mapDispatchToProps = dispatch => ({
+  correctGuess: () => dispatch(correctGuess())
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);
