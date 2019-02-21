@@ -2,6 +2,16 @@
   "name": "japp",
   "version": "0.1.0",
   "private": true,
+  "dependencies": {
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-redux": "^6.0.1",
+    "react-scripts": "2.1.5",
+    "react-test-renderer": "^16.8.2",
+    "redux": "^4.0.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -17,14 +27,6 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "dependencies": {
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.9.1",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.2",
-    "react-scripts": "2.1.5",
-    "react-test-renderer": "^16.8.2"
-  },
   "devDependencies": {
     "check-prop-types": "^1.1.2"
   }
