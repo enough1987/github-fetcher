@@ -14,8 +14,8 @@ const setup = (props = {}, initialState = {}) => {
 
 test('on click add guess', () => {
   const props = { show: true }
-  const initialState = { correctGuess: "test" }
-  const wrapper = setup(props, initialState);
+  const initialState = { ...props, correctGuess: "test" }
+  const wrapper = setup(initialState);
   console.log( wrapper.html() );
   const button = findByAttr(wrapper, 'component-button');
   button.simulate('click');
