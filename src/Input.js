@@ -17,10 +17,18 @@ export class Input extends Component {
   }
 
   handleOnGuess = () => {
-    console.log(' on guess ');
+    console.log(' on guess ', this.props, this.state);
   }
 
   render() {
+
+    if( !this.props.show ) {
+        return  (
+            <div className="component-input-wrapper"
+                data-test="component-input-wrapper" >   
+            </div>
+        ) 
+    }
 
     return (
       <div className="component-input-wrapper"
@@ -31,9 +39,11 @@ export class Input extends Component {
             onChange={this.handleInputChange}
             value={this.props.inputValue } />
 
-          <botton 
-            data-test="component-botton"
-            onClick={this.handleOnGuess} >  Guess </botton>
+          <button 
+            data-test="component-button"
+            onClick={this.handleOnGuess} > 
+             Guess 
+          </button>
 
       </div>
     );

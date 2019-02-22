@@ -5,17 +5,20 @@ import { findByAttr } from "./testUtils";
 import { Input } from './Input';
 import { storeFactory } from './testUtils';
 
-const setup = (props = {}, state = {}) => {
-  const store = storeFactory(props);
+const setup = (props = {}, initialState = {}) => {
+  const store = storeFactory(initialState);
   const wrapper = shallow(<Input {...props} store={store} />);
-  wrapper.setState(state);
+
   return wrapper;
 }
 
 test('on click add guess', () => {
-  const wrapper = setup();
-  const botton = findByAttr(wrapper, 'component-botton');
-  botton.simulate('click');
+  const props = { show: true }
+  const initialState = { correctGuess: "test" }
+  const wrapper = setup(props, initialState);
+  console.log( wrapper.html() );
+  const button = findByAttr(wrapper, 'component-button');
+  button.simulate('click');
   console.log( wrapper.debug() );
 
 });
