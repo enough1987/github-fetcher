@@ -4,11 +4,24 @@ import { shallow } from 'enzyme';
 import { findByAttr } from "./testUtils";
 import { App } from './App';
 
-const setup = (props = {}, state = {}) => {
-  const wrapper = shallow(<App {...props}/>);
-  wrapper.setState(state);
-  return wrapper;
-}
+let getGuesses;
+let defaultProps;
+let setup;
+
+beforeEach(() => {
+  getGuesses = jest.fn();
+  defaultProps = { getGuesses };
+
+  setup = (props = defaultProps, state = {}) => {
+    const wrapper = shallow(<App {...props}/>);
+    wrapper.setState(state);
+    return wrapper;
+  }
+});
+
+afterEach(() => {
+  getGuesses.mockClear();
+});
 
 test('increment counter', () => {
   const wrapper = setup();
@@ -20,7 +33,7 @@ test('increment counter', () => {
 });
 
 test('decrement counter', () => {
-  const wrapper = setup({}, { counter: 10 });
+  const wrapper = setup(defaultProps, { counter: 10 });
   const botton = findByAttr(wrapper, 'btn-decrement');
   botton.simulate('click');
   botton.simulate('click');
@@ -30,7 +43,7 @@ test('decrement counter', () => {
 });
 
 test('counter should not be less than zero', () => {
-  const wrapper = setup({}, { counter: 1 });
+  const wrapper = setup(defaultProps, { counter: 1 });
   //console.log( wrapper.html() );
   const botton = findByAttr(wrapper, 'btn-decrement');
   botton.simulate('click');

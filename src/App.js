@@ -5,7 +5,7 @@ import './App.css';
 import Congrats from './Congrats';
 import GuessList from './GuessList';
 import Input from './Input';
-import {correctGuess} from './store/actions/guesses';
+import {correctGuess, getGuesses} from './store/actions/guesses';
 
 export class App extends Component {
 
@@ -14,6 +14,7 @@ export class App extends Component {
     this.state = {
       counter: 0
     }
+    this.props.getGuesses();
   }
 
   increment = () => {
@@ -54,7 +55,7 @@ export class App extends Component {
 
         <Congrats show={ false } />
         <Input show={ true } />
-        <GuessList guesses={ [] } />
+        <GuessList guesses={ this.props.guesses } />
 
       </div>
     );
@@ -62,11 +63,12 @@ export class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  guesses: state.guesses
+  guesses: state.guesses.guesses
 })
 
 const mapDispatchToProps = dispatch => ({
-  correctGuess: () => dispatch(correctGuess())
+  correctGuess: () => dispatch(correctGuess()),
+  getGuesses: () => dispatch(getGuesses())
 })
 
 export default connect(

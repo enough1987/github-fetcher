@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
+import {addGuess} from './store/actions/guesses';
+
 export class Input extends Component {
 
   constructor(props) {
@@ -17,7 +19,7 @@ export class Input extends Component {
   }
 
   handleOnGuess = () => {
-    console.log(' on guess ', this.props, this.state);
+    this.props.addGuess({ guess: this.state.inputValue });
   }
 
   render() {
@@ -55,7 +57,7 @@ const mapStateToProps = state => ({
 })
   
 const mapDispatchToProps = dispatch => ({
-
+  addGuess: (guess) => dispatch(addGuess(guess))
 })
 
 export default connect(
