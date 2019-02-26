@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-import {addGuess} from './store/actions/guesses';
+import {addGuess} from '../../store/actions/guesses';
 
 export class Input extends Component {
 

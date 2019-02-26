@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { findByAttr } from "./testUtils";
+import { findByAttr } from "../../testUtils";
 import { Input } from './Input';
-import { storeFactory } from './testUtils';
+import { storeFactory } from '../../testUtils';
 
 let addGuess;
 let defaultProps;

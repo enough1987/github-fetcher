@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { findByAttr, checkTypes } from "./testUtils";
+import { findByAttr, checkTypes } from "../../testUtils";
 import Congrats from './Congrats';
 
 const setup = (props = { show: false }, state = {}) => {

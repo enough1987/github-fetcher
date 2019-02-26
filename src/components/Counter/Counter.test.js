@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { findByAttr } from "./testUtils";
-import { App } from './App';
+import { Counter } from './Counter';
+import { findByAttr } from "../../testUtils";
 
 let getGuesses;
 let defaultProps;
@@ -13,7 +13,7 @@ beforeEach(() => {
   defaultProps = { getGuesses };
 
   setup = (props = defaultProps, state = {}) => {
-    const wrapper = shallow(<App {...props}/>);
+    const wrapper = shallow(<Counter {...props}/>);
     wrapper.setState(state);
     return wrapper;
   }
@@ -43,12 +43,12 @@ test('decrement counter', () => {
 });
 
 test('counter should not be less than zero', () => {
-  const wrapper = setup(defaultProps, { counter: 1 });
-  //console.log( wrapper.html() );
-  const botton = findByAttr(wrapper, 'btn-decrement');
-  botton.simulate('click');
-  botton.simulate('click');
-
-  expect( wrapper.state('counter') )
-    .toEqual(0);
-});
+    const wrapper = setup(defaultProps, { counter: 1 });
+    //console.log( wrapper.html() );
+    const botton = findByAttr(wrapper, 'btn-decrement');
+    botton.simulate('click');
+    botton.simulate('click');
+  
+    expect( wrapper.state('counter') )
+      .toEqual(0);
+  });
