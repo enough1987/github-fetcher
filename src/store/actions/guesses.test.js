@@ -1,11 +1,12 @@
-import { guessActionTypes, correctGuess } from './guesses';
+import { guessActionTypes, addGuess } from './guesses';
 
-it('correctGuess return correct action', () => {
+it('addGuess return correct action', () => {
     const guess = { guess: 'test', mutch: 5 };
-    const action = correctGuess(guess);
+    const action = addGuess(guess);
 
     expect(action)
         .toEqual({
-            type: guessActionTypes.CORRECT_GUESS
+            type: guessActionTypes.ADD_GUESS,
+            guess
         });
 });

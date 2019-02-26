@@ -10,7 +10,7 @@ class GuessList extends Component {
   render() {
 
     const guesses = this.props.guesses.length ? this.props.guesses.map((item, index) => {
-        return <div data-test="component-guess-item" key={index}> { item.guess } : { item.mutch } </div>
+        return <div data-test="component-guess-item" key={index}> { item.guess } : { item.match } </div>
     }) : "There are no guesses yet";
 
     return (
@@ -26,7 +26,7 @@ GuessList.propTypes = {
     guesses: PropTypes.arrayOf(
         PropTypes.shape({
             guess: PropTypes.string,
-            mutch: PropTypes.number
+            match: PropTypes.number
           }
     ))
 };

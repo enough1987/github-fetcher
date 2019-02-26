@@ -17,7 +17,7 @@ export class Counter extends Component {
     })
   }
 
-  decrement = (a, b) => {
+  decrement = () => {
     this.setState((state) => {
       if(!state.counter) {
         return {};

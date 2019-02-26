@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
 import './App.css';
-import Congrats from '../../components/congrats/Congrats';
+import Congrats from '../../components/Congrats/Congrats';
 import GuessList from '../../components/GuessList/GuessList';
 import Input from '../../components/Input/Input';
 import Counter from '../../components/Counter/Counter';
-import {correctGuess, getGuesses} from '../../store/actions/guesses';
+import {getGuesses} from '../../store/actions/guesses';
 
 export class App extends Component {
 
@@ -19,15 +19,14 @@ export class App extends Component {
   }
 
   render() {
-
     return (
       <div data-test="App" 
         className="App">
        
         <Counter />
 
-        <Congrats show={ false } />
-        <Input show={ true } />
+        <Congrats show={ this.props.isCorrectGuess | false } />
+        <Input show={ !this.props.isCorrectGuess  | false } />
         <GuessList guesses={ this.props.guesses } />
 
       </div>
@@ -36,11 +35,11 @@ export class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  guesses: state.guesses.guesses
+  guesses: state.guesses.guesses,
+  isCorrectGuess: state.guesses.isCorrectGuess
 })
 
 const mapDispatchToProps = dispatch => ({
-  correctGuess: () => dispatch(correctGuess()),
   getGuesses: () => dispatch(getGuesses())
 })
 

@@ -6,12 +6,14 @@ import { Input } from './Input';
 import { storeFactory } from '../../testUtils';
 
 let addGuess;
+let getCorrectGuess;
 let defaultProps;
 let setup;
 
 beforeEach(() => {
+  getCorrectGuess = jest.fn();
   addGuess = jest.fn();
-  defaultProps = { show: true,  addGuess };
+  defaultProps = { show: true, addGuess, getCorrectGuess };
 
   setup = (props = {}, initialState = {}) => {
     const store = storeFactory(initialState);
@@ -23,13 +25,13 @@ beforeEach(() => {
 
 afterEach(() => {
   addGuess.mockClear();
+  getCorrectGuess.mockClear();
 });
 
 test('on click add guess', () => {
   const props = defaultProps;
   const initialState = { ...props, correctGuess: "test" }
   const wrapper = setup(initialState);
-  console.log( wrapper.html() );
   const button = findByAttr(wrapper, 'component-button');
   button.simulate('click');
   expect(addGuess).toBeCalled();
