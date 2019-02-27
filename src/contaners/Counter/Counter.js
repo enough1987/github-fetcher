@@ -31,6 +31,7 @@ export class Counter extends Component {
   render() {
     return ( 
         <div className="Counter" > 
+          <h1> current counter is { this.state.counter } </h1>
           <button data-test="btn-increment" 
             onClick={ this.increment }>
             increment
@@ -39,10 +40,15 @@ export class Counter extends Component {
             onClick={ this.decrement }>
             decrement
           </button>  
-          <h1> current counter is { this.state.counter } </h1>
         </div>
     );
   }
 }
+
+Counter.path = "counter";
+Counter.navigationOptions = () => ({
+  title: "Counter",
+  linkName: "Counter"
+});
 
 export default Counter;
