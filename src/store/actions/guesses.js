@@ -3,12 +3,21 @@ import axios from 'axios';
 import { matchWords } from '../../helpers/index';
   
   export const guessActionTypes = {
+    GIVE_UP: 'GIVE_UP',
+    RESET_GUESSES: 'RESET_GUESSES',
     GET_CORRECT_GUESS: 'GET_CORRECT_GUESS',
     SET_IS_CORRECT_GUESS: 'SET_IS_CORRECT_GUESS',
     ADD_GUESS: 'ADD_GUESS',
     GET_GUESSES: 'GET_GUESSES'
   }
+ 
+  export const giveUp = () => ({
+    type: guessActionTypes.GIVE_UP
+  });
 
+  export const resetGuesses = () => ({
+    type: guessActionTypes.RESET_GUESSES
+  });
 
   export const setIsCorrectGuess = (isCorrectGuess) => ({
     type: guessActionTypes.SET_IS_CORRECT_GUESS,
