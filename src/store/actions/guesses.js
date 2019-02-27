@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 import { matchWords } from '../../helpers/index';
   
   export const guessActionTypes = {
@@ -13,12 +15,11 @@ import { matchWords } from '../../helpers/index';
     isCorrectGuess
   });
 
-  export const getCorrectGuess = () => (dispatch, getState) => {
-    const state = getState().guesses;
-    setTimeout(() => {
-      console.log(' state : ', state );
-      dispatch(_getCorrectGuess('truly'));
-    }, 1000 );
+  export const getCorrectGuess = () => (dispatch) => {
+    axios.get('data.json').then((data) => {
+      const correctGuess = data.data.correctGuess;
+      dispatch(_getCorrectGuess(correctGuess));
+    });
   };
 
   const _getCorrectGuess = (correctGuess) => ({
@@ -30,7 +31,7 @@ import { matchWords } from '../../helpers/index';
     const correctGuess = getState().guesses.correctGuess;
 
     const match = matchWords( guess.guess, correctGuess );
-    console.log( guess.guess === correctGuess, guess.guess , correctGuess );
+
     if ( guess.guess === correctGuess ) {
       dispatch(setIsCorrectGuess(true));
     }
@@ -46,7 +47,7 @@ import { matchWords } from '../../helpers/index';
 
   export const getGuesses = () => (dispatch, getState) => {
     const state = getState();
-    console.log(' state : ', state );
+
     dispatch(_getGuesses());
   };
 

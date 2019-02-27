@@ -44,7 +44,7 @@ test('decrement counter', () => {
 
 test('counter should not be less than zero', () => {
     const wrapper = setup(defaultProps, { counter: 1 });
-    //console.log( wrapper.html() );
+
     const botton = findByAttr(wrapper, 'btn-decrement');
     botton.simulate('click');
     botton.simulate('click');
