@@ -45,8 +45,7 @@ import { matchWords } from '../../helpers/index';
     guess
   });
 
-  export const getGuesses = () => (dispatch, getState) => {
-    const state = getState();
+  export const getGuesses = () => (dispatch) => {
 
     dispatch(_getGuesses());
   };
