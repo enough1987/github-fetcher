@@ -19,14 +19,15 @@ export class App extends Component {
   }
 
   render() {
+    console.log( this.props );
     return (
       <div data-test="App" 
         className="App">
        
         <Counter />
 
-        <Congrats show={ this.props.isCorrectGuess | false } />
-        <Input show={ !this.props.isCorrectGuess  | false } />
+        <Congrats show={ this.props.isCorrectGuess } />
+        <Input show={ !this.props.isCorrectGuess } />
         <GuessList guesses={ this.props.guesses } />
 
       </div>

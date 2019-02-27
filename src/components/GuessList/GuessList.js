@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 
 class GuessList extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
 
     const guesses = this.props.guesses.length ? this.props.guesses.map((item, index) => {

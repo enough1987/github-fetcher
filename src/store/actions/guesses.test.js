@@ -1,12 +1,25 @@
 import { guessActionTypes, addGuess } from './guesses';
+import { storeFactory } from '../../testUtils';
 
-it('addGuess return correct action', () => {
-    const guess = { guess: 'test', mutch: 5 };
-    const action = addGuess(guess);
+const initialState = { correctGuess: 'truly' };
+const store = storeFactory(initialState);
 
-    expect(action)
+it('addGuess return correct action', async () => {
+    const guess = { guess: 'test' };
+    await store.dispatch(addGuess(guess))
+    
+    console.log( store );
+    const state = store.getState().guesses;
+
+    expect(state)
         .toEqual({
-            type: guessActionTypes.ADD_GUESS,
-            guess
+                "isCorrectGuess": false,
+                "correctGuess": "",
+                "guesses": [
+                  {
+                   "guess": "test",
+                   "match": 0,
+                  }
+                ] 
         });
 });

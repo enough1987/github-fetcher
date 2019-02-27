@@ -14,6 +14,7 @@ const guesses = (state = defaultState, action) => {
           correctGuess: action.correctGuess
         }
       case guessActionTypes.SET_IS_CORRECT_GUESS:
+        console.log(action);
         return {
           ...state,
           isCorrectGuess: action.isCorrectGuess

@@ -1,3 +1,5 @@
+import { matchWords } from '../../helpers/index';
+  
   export const guessActionTypes = {
     GET_CORRECT_GUESS: 'GET_CORRECT_GUESS',
     SET_IS_CORRECT_GUESS: 'SET_IS_CORRECT_GUESS',
@@ -12,7 +14,7 @@
   });
 
   export const getCorrectGuess = () => (dispatch, getState) => {
-    const state = getState();
+    const state = getState().guesses;
     setTimeout(() => {
       console.log(' state : ', state );
       dispatch(_getCorrectGuess('truly'));
@@ -24,7 +26,20 @@
     correctGuess
   });
 
-  export const addGuess = (guess) => ({
+  export const addGuess = (guess) => (dispatch, getState) => {
+    const correctGuess = getState().guesses.correctGuess;
+
+    const match = matchWords( guess.guess, correctGuess );
+    console.log( guess.guess === correctGuess, guess.guess , correctGuess );
+    if ( guess.guess === correctGuess ) {
+      dispatch(setIsCorrectGuess(true));
+    }
+
+    const _guess = { ...guess , match };
+    dispatch(_addGuess(_guess));
+  };
+
+  export const _addGuess = (guess) => ({
     type: guessActionTypes.ADD_GUESS,
     guess
   });

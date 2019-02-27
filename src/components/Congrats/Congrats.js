@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 
 class Congrats extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="component-congrats"
