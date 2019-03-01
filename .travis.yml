@@ -9,8 +9,11 @@ cache:
     - node_modules
 install:
   - npm install
-scripts:
-  - nohup npm run start &
-  - sleep 5
-  - npm run lint
-  - npm run test
+jobs:  
+  include:
+    - stage: "lint"                # naming the Tests stage
+      name: "Lint"            # names the first Tests stage job
+      script: npm run lint
+    - stage: test
+      name: "Unit tests"
+      script: npm run test
