@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { findByAttr } from '../../testUtils'
+import { findByAttr } from '../../utils/testUtils'
 import Header from './Header'
 import { GuessWord } from '../../contaners/GuessWord/GuessWord'
 

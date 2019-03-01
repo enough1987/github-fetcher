@@ -1,9 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { findByAttr } from '../../testUtils'
+import { findByAttr } from '../../utils/testUtils'
 import { Input } from './Input'
-import { storeFactory } from '../../testUtils'
+import { storeFactory } from '../../utils/testUtils'
 
 let addGuess
 let getCorrectGuess

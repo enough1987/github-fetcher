@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { findByAttr, storeFactory } from '../../testUtils'
+import { findByAttr, storeFactory } from '../../utils/testUtils'
 import { GuessWord } from './GuessWord'
 
 describe('GuessWord ', () => {

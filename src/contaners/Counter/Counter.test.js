@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 
 import { Counter } from './Counter'
-import { findByAttr } from '../../testUtils'
+import { findByAttr } from '../../utils/testUtils'
 
 let getGuesses
 let defaultProps

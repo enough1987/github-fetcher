@@ -2,7 +2,7 @@ import axios from 'axios'
 import moxios from 'moxios'
 
 import { getCorrectGuess, addGuess } from './guesses'
-import { storeFactory } from '../../testUtils'
+import { storeFactory } from '../../utils/testUtils'
 
 const initialState = { correctGuess: 'truly' }
 const store = storeFactory(initialState)
