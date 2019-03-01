@@ -4,4 +4,4 @@ import guesses from './guesses'
 
 export default combineReducers({
   guesses
-})
+});

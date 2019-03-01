@@ -10,10 +10,8 @@ import { getGuesses } from '../../store/actions/guesses';
 
 export class GuessWord extends Component {
 
-
   constructor(props) {
     super(props);
-    this.props.getGuesses();
   }
 
   render() {
@@ -52,8 +50,8 @@ const mapStateToProps = state => ({
   })
   
 const mapDispatchToProps = dispatch => ({
-    getGuesses: () => dispatch(getGuesses())
-  })
+
+})
   
 export default connect(
     mapStateToProps,

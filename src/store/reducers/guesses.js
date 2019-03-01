@@ -36,8 +36,6 @@ const guesses = (state = defaultState, action) => {
           ...state,
           guesses: [...state.guesses, action.guess]
         }
-      case guessActionTypes.GET_GUESSES:
-        return state
       default:
         return state
     }

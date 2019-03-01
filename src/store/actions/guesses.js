@@ -53,12 +53,3 @@ import { matchWords } from '../../helpers/index';
     type: guessActionTypes.ADD_GUESS,
     guess
   });
-
-  export const getGuesses = () => (dispatch) => {
-
-    dispatch(_getGuesses());
-  };
-
-  const _getGuesses = (guess) => ({
-    type: guessActionTypes.GET_GUESSES
-  });
