@@ -1,45 +1,43 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import React from 'react'
+import { shallow } from 'enzyme'
 
-import { findByAttr, storeFactory } from '../../testUtils';
-import { ResetGuesses } from './ResetGuesses';
+import { findByAttr, storeFactory } from '../../testUtils'
+import { ResetGuesses } from './ResetGuesses'
 
-describe('Reset Guesses ', () => { 
+describe('Reset Guesses ', () => {
+  let resetGuesses
+  let defaultProps
+  let setup
 
-    let resetGuesses;
-    let defaultProps;
-    let setup;
+  beforeEach(() => {
+    resetGuesses = jest.fn()
 
-    beforeEach(() => {
-        resetGuesses = jest.fn();
+    defaultProps = { resetGuesses }
 
-        defaultProps = { resetGuesses };
+    setup = (props = defaultProps, initialState = {}) => {
+      const store = storeFactory(initialState)
+      const wrapper = shallow(<ResetGuesses { ...props } store={ store } />)
 
-        setup = (props = defaultProps, initialState = {}) => {
-            const store = storeFactory(initialState);
-            const wrapper = shallow(<ResetGuesses { ...props } store={ store } />);
+      return wrapper
+    }
+  })
 
-            return wrapper;
-        }
-    });
+  afterEach(() => {
+    resetGuesses.mockClear()
+  })
 
-    afterEach(() => {
-        resetGuesses.mockClear();
-    });
+  test('should render a button', () => {
+    const wrapper = setup()
+    const button = findByAttr(wrapper, 'reset-guesses-button')
+    expect(button)
+      .toBeTruthy()
+  })
 
-    test('should render a button', () => {
-        const wrapper = setup();
-        const button = findByAttr(wrapper, 'reset-guesses-button');
-        expect( button )
-            .toBeTruthy();
-    });
-    
-    test('should reset on click', () => {    
-        const wrapper = setup();
-        const button = findByAttr(wrapper, 'reset-guesses-button');
-        //button.simulate('click');
-        //expect(resetGuesses)
-        //    .toBeCalled();
-    });
-
-});
+  test('should reset on click', () => {
+    const wrapper = setup()
+    const button = findByAttr(wrapper, 'reset-guesses-button')
+    // button.simulate('click');
+    // expect(resetGuesses)
+    //    .toBeCalled();
+  })
+})

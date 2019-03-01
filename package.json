@@ -34,9 +34,12 @@
   ],
   "devDependencies": {
     "check-prop-types": "^1.1.2",
-    "eslint": "5.12.0",
+    "eslint": "^5.12.0",
     "eslint-plugin-jest": "^22.3.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
     "moxios": "^0.4.0"
   }
 }

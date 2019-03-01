@@ -1,45 +1,43 @@
-import React from 'react';
-import { shallow } from 'enzyme';
+import React from 'react'
+import { shallow } from 'enzyme'
 
-import { findByAttr, storeFactory } from '../../testUtils';
-import GiveUp from './GiveUp';
+import { findByAttr, storeFactory } from '../../testUtils'
+import GiveUp from './GiveUp'
 
-describe('GiveUp ', () => { 
+describe('GiveUp ', () => {
+  let giveUp
+  let defaultProps
+  let setup
 
-    let giveUp;
-    let defaultProps;
-    let setup;
+  beforeEach(() => {
+    giveUp = jest.fn()
 
-    beforeEach(() => {
-        giveUp = jest.fn();
+    defaultProps = { giveUp }
 
-        defaultProps = { giveUp };
+    setup = (props = defaultProps, initialState = {}) => {
+      const store = storeFactory(initialState)
+      const wrapper = shallow(<GiveUp { ...props } store={ store } />)
 
-        setup = (props = defaultProps, initialState = {}) => {
-            const store = storeFactory(initialState);
-            const wrapper = shallow(<GiveUp { ...props } store={ store } />);
+      return wrapper
+    }
+  })
 
-            return wrapper;
-        }
-    });
+  afterEach(() => {
+    giveUp.mockClear()
+  })
 
-    afterEach(() => {
-        giveUp.mockClear();
-    });
+  test('should render a button', () => {
+    const wrapper = setup()
+    const button = findByAttr(wrapper, 'give-up-button')
+    expect(button)
+      .toBeTruthy()
+  })
 
-    test('should render a button', () => {
-        const wrapper = setup();
-        const button = findByAttr(wrapper, 'give-up-button');
-        expect( button )
-            .toBeTruthy();
-    });
-    
-    test('should reset on click', () => {    
-        const wrapper = setup();
-        const button = findByAttr(wrapper, 'give-up-button');
-        //button.simulate('click');
-        //expect(giveUp)
-        //    .toBeCalled();
-    });
-
-});
+  test('should reset on click', () => {
+    const wrapper = setup()
+    const button = findByAttr(wrapper, 'give-up-button')
+    // button.simulate('click');
+    // expect(giveUp)
+    //    .toBeCalled();
+  })
+})
