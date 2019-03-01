@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { findByAttr } from "../../testUtils";
+import { findByAttr } from '../../testUtils';
 import Header from './Header';
-import { GuessWord } from "../../contaners/GuessWord/GuessWord";
+import { GuessWord } from '../../contaners/GuessWord/GuessWord';
 
 describe('Header ', () => { 
 
@@ -15,7 +15,7 @@ describe('Header ', () => {
         defaultProps = { };
 
         setup = (props = {}) => {
-            const wrapper = shallow(<Header {...props} />);
+            const wrapper = shallow(<Header { ...props } />);
 
             return wrapper;
         }

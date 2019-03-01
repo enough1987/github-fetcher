@@ -26,8 +26,8 @@ it('addGuess add guess to guesses', async () => {
     expect(state)
         .toEqual([
                   {
-                   "guess": "test",
-                   "match": 0,
+                   'guess': 'test',
+                   'match': 0,
                   }
         ]);
 });
@@ -46,7 +46,7 @@ it('getCorrectGuess get correct guess', async () => {
                 const correctGuess = store.getState().guesses.correctGuess;
 
                 expect(correctGuess)
-                .toEqual("truly");  
+                .toEqual('truly');  
         });     
  
 });

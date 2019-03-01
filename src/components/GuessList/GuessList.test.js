@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { findByAttr, checkTypes } from "../../testUtils";
+import { findByAttr, checkTypes } from '../../testUtils';
 import GuessList from './GuessList';
 
 const setup = (props = { guesses: [] }, state = {}) => {
-  const wrapper = shallow(<GuessList {...props}/>);
+  const wrapper = shallow(<GuessList { ...props }/>);
   wrapper.setState(state);
   return wrapper;
 }
@@ -15,7 +15,7 @@ test('component is showing string when there are no guesses', () => {
     const component = findByAttr(wrapper, 'component-guess-list');
     
     expect ( component.text() )
-        .toEqual("There are no guesses yet");
+        .toEqual('There are no guesses yet');
 });
 
 test('component is showing all guesses', () => {
@@ -31,4 +31,3 @@ test('test prop types', () => {
 
   expect(result === undefined);
 })
-

@@ -4,7 +4,7 @@ const defaultState = {
   guesses: [], // { guess: PropTypes.string, match: PropTypes.number }
   isCorrectGuess: false,
   giveUp: false,
-  correctGuess: ""
+  correctGuess: ''
 }
 
 const guesses = (state = defaultState, action) => {
@@ -34,7 +34,7 @@ const guesses = (state = defaultState, action) => {
       case guessActionTypes.ADD_GUESS:
         return {
           ...state,
-          guesses: [...state.guesses, action.guess]
+          guesses: [ ...state.guesses, action.guess ]
         }
       default:
         return state

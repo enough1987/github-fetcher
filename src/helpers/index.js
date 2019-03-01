@@ -1,9 +1,6 @@
-
-
 export const matchWords = (a, b) => {
     const left = new Set(a);
     const right = new Set(b);  
- 
 
     const union = new Set();
     right.forEach((r) => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { Counter } from './Counter';
-import { findByAttr } from "../../testUtils";
+import { findByAttr } from '../../testUtils';
 
 let getGuesses;
 let defaultProps;
@@ -13,7 +13,7 @@ beforeEach(() => {
   defaultProps = { getGuesses };
 
   setup = (props = defaultProps, state = {}) => {
-    const wrapper = shallow(<Counter {...props}/>);
+    const wrapper = shallow(<Counter { ...props }/>);
     wrapper.setState(state);
     return wrapper;
   }

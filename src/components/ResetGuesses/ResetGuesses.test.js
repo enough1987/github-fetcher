@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { findByAttr, storeFactory } from "../../testUtils";
+import { findByAttr, storeFactory } from '../../testUtils';
 import { ResetGuesses } from './ResetGuesses';
 
 describe('Reset Guesses ', () => { 
@@ -17,7 +17,7 @@ describe('Reset Guesses ', () => {
 
         setup = (props = defaultProps, initialState = {}) => {
             const store = storeFactory(initialState);
-            const wrapper = shallow(<ResetGuesses {...props} store={store} />);
+            const wrapper = shallow(<ResetGuesses { ...props } store={ store } />);
 
             return wrapper;
         }

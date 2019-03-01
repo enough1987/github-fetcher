@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { findByAttr } from "../../testUtils";
+import { findByAttr } from '../../testUtils';
 import { App } from './App';
 
 let getGuesses;
@@ -13,7 +13,7 @@ beforeEach(() => {
   defaultProps = { getGuesses };
 
   setup = (props = defaultProps, state = {}) => {
-    const wrapper = shallow(<App {...props}/>);
+    const wrapper = shallow(<App { ...props }/>);
     wrapper.setState(state);
     return wrapper;
   }
@@ -30,4 +30,3 @@ test('init successfuly', () => {
   expect( app )
     .toBeTruthy();
 });
-

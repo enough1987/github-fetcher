@@ -5,10 +5,10 @@ class Congrats extends Component {
 
   render() {
     return (
-      <div className="component-congrats"
+        <div className="component-congrats"
         data-test="component-congrats" >
-          { this.props.show ? "Yes, you did it" : "" }
-      </div>
+            { this.props.show ? 'Yes, you did it' : '' }
+        </div>
     );
   }
 }

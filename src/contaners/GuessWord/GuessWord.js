@@ -17,7 +17,7 @@ export class GuessWord extends Component {
   render() {
 
     const giveUp = this.props.giveUp ? 
-      <div> Correct world is { this.props.correctGuess } </div> 
+        <div> Correct world is { this.props.correctGuess } </div> 
       : null;
 
     return ( 
@@ -36,10 +36,10 @@ export class GuessWord extends Component {
   }
 }
 
-GuessWord.path = "guess-world";
+GuessWord.path = 'guess-world';
 GuessWord.navigationOptions = () => ({
-  title: "Guess world",
-  linkName: "Guess world"
+  title: 'Guess world',
+  linkName: 'Guess world'
 });
 
 const mapStateToProps = state => ({

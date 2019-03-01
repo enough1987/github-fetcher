@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { findByAttr, checkTypes } from "../../testUtils";
+import { findByAttr, checkTypes } from '../../testUtils';
 import Congrats from './Congrats';
 
 const setup = (props = { show: false }, state = {}) => {
-  const wrapper = shallow(<Congrats {...props}/>);
+  const wrapper = shallow(<Congrats { ...props }/>);
   wrapper.setState(state);
   return wrapper;
 }
@@ -15,7 +15,7 @@ test('component is empty is show prop is false', () => {
     const component = findByAttr(wrapper, 'component-congrats');
     
     expect ( component.text() )
-        .toEqual("");
+        .toEqual('');
 });
 
 test('component has text if show prop is true', () => {
@@ -23,7 +23,7 @@ test('component has text if show prop is true', () => {
     const component = findByAttr(wrapper, 'component-congrats');
 
     expect ( component.text() )
-        .toEqual("Yes, you did it");
+        .toEqual('Yes, you did it');
 });
 
 test('test prop types', () => {
@@ -31,4 +31,3 @@ test('test prop types', () => {
 
   expect(result === undefined);
 })
-
