@@ -8,13 +8,15 @@ export class Header extends Component {
     return ( 
         <div className="header" 
             data-test="header" > 
-          <Link routeName="GuessWord" >
+          <Link routeName="GuessWord" 
+            data-test="GuessWord" >
             guesser
           </Link>  
 
           <span> / </span>
 
-          <Link routeName="Counter" >
+          <Link routeName="Counter" 
+            data-test="Counter">
             counter
           </Link> 
           <br />
