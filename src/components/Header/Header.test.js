@@ -1,36 +1,36 @@
-import React from 'react'
-import { shallow } from 'enzyme'
+import React from 'react';
+import { shallow } from 'enzyme';
 
-import { findByAttr } from '../../utils/testUtils'
-import Header from './Header'
-import { GuessWord } from '../../contaners/GuessWord/GuessWord'
+import { findByAttr } from '../../utils/testUtils';
+import Header from './Header';
+import { GuessWord } from '../../contaners/GuessWord/GuessWord';
 
 describe('Header ', () => {
-  let defaultProps
-  let setup
+  let defaultProps;
+  let setup;
 
   beforeEach(() => {
-    defaultProps = { }
+    defaultProps = { };
 
     setup = (props = {}) => {
-      const wrapper = shallow(<Header { ...props } />)
+      const wrapper = shallow(<Header { ...props } />);
 
-      return wrapper
-    }
-  })
+      return wrapper;
+    };
+  });
 
   test('should render header', () => {
-    const wrapper = setup()
-    const header = findByAttr(wrapper, 'header')
+    const wrapper = setup();
+    const header = findByAttr(wrapper, 'header');
     expect(header)
-      .toBeTruthy()
-  })
+      .toBeTruthy();
+  });
 
   test('should navigate on click on Link', () => {
-    const wrapper = setup()
-    const link = findByAttr(wrapper, 'GuessWord')
-    link.simulate('click')
+    const wrapper = setup();
+    const link = findByAttr(wrapper, 'GuessWord');
+    link.simulate('click');
     // expect(location.pathname)
     //    .toEqual(GuessWord.path);
-  })
-})
+  });
+});

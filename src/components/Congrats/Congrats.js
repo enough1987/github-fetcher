@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Congrats extends Component {
   render () {
@@ -8,12 +8,12 @@ class Congrats extends Component {
         data-test="component-congrats" >
           { this.props.show ? 'Yes, you did it' : '' }
       </div>
-    )
+    );
   }
 }
 
 Congrats.propTypes = {
   show: PropTypes.bool.isRequired
-}
+};
 
-export default Congrats
+export default Congrats;

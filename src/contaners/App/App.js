@@ -1,21 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
   createNavigator,
   SwitchRouter,
   SceneView
-} from '@react-navigation/core'
-import { createBrowserApp } from '@react-navigation/web'
+} from '@react-navigation/core';
+import { createBrowserApp } from '@react-navigation/web';
 
-import './App.css'
-import Header from '../../components/Header/Header'
-import Counter from '../Counter/Counter'
-import GuessWord from '../GuessWord/GuessWord'
+import './App.css';
+import Header from '../../components/Header/Header';
+import Counter from '../Counter/Counter';
+import GuessWord from '../GuessWord/GuessWord';
 
 class SidebarView extends Component {
   render () {
-    const { descriptors, navigation } = this.props
-    const activeKey = navigation.state.routes[ navigation.state.index ].key
-    const descriptor = descriptors[ activeKey ]
+    const { descriptors, navigation } = this.props;
+    const activeKey = navigation.state.routes[ navigation.state.index ].key;
+    const descriptor = descriptors[ activeKey ];
 
     return (
         <div className="App"
@@ -29,7 +29,7 @@ class SidebarView extends Component {
           />
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -40,8 +40,8 @@ const AppNavigator = createNavigator(
     Counter
   }),
   {}
-)
+);
 
-export const App = createBrowserApp(AppNavigator)
+export const App = createBrowserApp(AppNavigator);
 
-export default App
+export default App;

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import { Link } from '@react-navigation/web'
+import { Link } from '@react-navigation/web';
 
 export class Header extends Component {
   render () {
@@ -21,8 +21,8 @@ export class Header extends Component {
           <br />
           <br />
       </div>
-    )
+    );
   }
 }
 
-export default Header
+export default Header;
