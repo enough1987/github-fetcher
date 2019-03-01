@@ -7,12 +7,12 @@
     "@react-navigation/web": "^1.0.0-alpha.7",
     "axios": "^0.18.0",
     "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.9.1",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.2",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-redux": "^5.0.7",
     "react-scripts": "2.1.5",
-    "react-test-renderer": "^16.8.2",
+    "react-test-renderer": "^16.8.3",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },
@@ -34,7 +34,7 @@
   ],
   "devDependencies": {
     "check-prop-types": "^1.1.2",
-    "eslint": "^5.14.1",
+    "eslint": "5.12.0",
     "eslint-plugin-jest": "^22.3.0",
     "eslint-plugin-react": "^7.12.4",
     "moxios": "^0.4.0"
