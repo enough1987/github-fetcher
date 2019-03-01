@@ -34,5 +34,5 @@ test('on click add guess', () => {
   const wrapper = setup(initialState);
   const button = findByAttr(wrapper, 'component-button');
   button.simulate('click');
-  expect(addGuess).toBeCalled();
+  expect(addGuess).toHaveBeenCalled();
 });

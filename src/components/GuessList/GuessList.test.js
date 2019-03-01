@@ -22,8 +22,8 @@ test('component is showing all guesses', () => {
     const wrapper = setup({ guesses: [ { guess: 'rest', mutch: 3 } ] });
     const components = findByAttr(wrapper, 'component-guess-item');
 
-    expect ( components.length )
-        .toEqual(1);
+    expect ( components )
+        .toHaveLength(1);
 });
 
 test('test prop types', () => {
