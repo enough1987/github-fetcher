@@ -35,7 +35,7 @@ export class GiveUp extends Component {
 
 GiveUp.propTypes = {
   show: PropTypes.bool.isRequired,
-  giveUp: PropTypes.bool.isRequired
+  giveUp: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = dispatch => ({

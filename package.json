@@ -36,9 +36,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^9.0.0",
     "check-prop-types": "^1.1.2",
-    "eslint": "^5.15.0",
+    "eslint": "^5.12.0",
     "eslint-plugin-jest": "^22.3.0",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
