@@ -27,7 +27,8 @@ test('component has text if show prop is true', () => {
 });
 
 test('test prop types', () => {
-  const result = checkTypes(Congrats, { show: 'true' });
+  const result = checkTypes(Congrats, { show: true });
 
-  expect(result === undefined);
+  expect(result)
+    .toEqual(undefined);
 });

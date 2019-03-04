@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   createNavigator,
   SwitchRouter,
@@ -18,20 +19,25 @@ class SidebarView extends Component {
     const descriptor = descriptors[ activeKey ];
 
     return (
-        <div className="App"
+      <div className="App"
         data-test="App" >
-          <Header />
+            <Header />
 
-          <div>
-            <SceneView
+        <div>
+          <SceneView
             component={ descriptor.getComponent() }
             navigation={ descriptor.navigation }
           />
+          </div>
         </div>
-      </div>
     );
   }
 }
+
+SidebarView.propTypes = {
+  navigation: PropTypes.object.isRequired,
+  descriptors: PropTypes.object.isRequired
+};
 
 const AppNavigator = createNavigator(
   SidebarView,

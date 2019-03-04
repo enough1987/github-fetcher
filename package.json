@@ -2,6 +2,9 @@
   "name": "japp",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=10.6.0"
+  },
   "dependencies": {
     "@react-navigation/core": "^3.1.1",
     "@react-navigation/web": "^1.0.0-alpha.7",
@@ -21,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/** --fix"
+    "lint": "eslint --fix src/**/*.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,8 +36,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "check-prop-types": "^1.1.2",
-    "eslint": "^5.12.0",
+    "eslint": "^5.15.0",
     "eslint-plugin-jest": "^22.3.0",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",

@@ -1,3 +1,8 @@
+/* eslint promise/catch-or-return: 0 */ // --> OFF
+/* eslint promise/always-return: 0 */ // --> OFF
+/* eslint no-console: 0 */ // --> OFF
+/* eslint promise/no-nesting: 0 */ // --> OFF
+
 // This optional code is used to register a service worker.
 // register() is not called by default.
 

@@ -1,45 +1,48 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import { giveUp } from '../../store/actions/guesses';
 
-
 export class GiveUp extends Component {
-
   handleOnGiveUp = () => {
     this.props.giveUp();
   }
 
-  render() {
-    if( !this.props.show ) {
-      return  (
+  render () {
+    if (!this.props.show) {
+      return (
           <div className="component-give-up-wrapper"
-            data-test="component-give-up-wrapper" >   
-          </div>
-      ) 
+          data-test="component-give-up-wrapper">
+        </div>
+      );
     }
 
     return (
       <div className="component-give-up-wrapper"
-           data-test="component-give-up-wrapper" >
+        data-test="component-give-up-wrapper" >
 
-          <button 
-            data-test="give-up-button"
-            onClick={this.handleOnGiveUp} > 
+            <button
+          data-test="give-up-button"
+          onClick={ this.handleOnGiveUp } >
              GiveUp
-          </button>
+        </button>
 
-      </div>
+        </div>
     );
   }
 }
-  
+
+GiveUp.propTypes = {
+  show: PropTypes.bool.isRequired,
+  giveUp: PropTypes.bool.isRequired
+};
+
 const mapDispatchToProps = dispatch => ({
-    giveUp: () => dispatch( giveUp() ),
-})
+  giveUp: () => dispatch(giveUp())
+});
 
 export default connect(
-    null,
-    mapDispatchToProps
-  )(GiveUp);
-  
+  null,
+  mapDispatchToProps
+)(GiveUp);

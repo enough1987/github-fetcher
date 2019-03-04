@@ -12,7 +12,7 @@ describe('GiveUp ', () => {
   beforeEach(() => {
     giveUp = jest.fn();
 
-    defaultProps = { giveUp };
+    defaultProps = { show: true, giveUp };
 
     setup = (props = defaultProps, initialState = {}) => {
       const store = storeFactory(initialState);
@@ -29,6 +29,7 @@ describe('GiveUp ', () => {
   test('should render a button', () => {
     const wrapper = setup();
     const button = findByAttr(wrapper, 'give-up-button');
+
     expect(button)
       .toBeTruthy();
   });
@@ -36,8 +37,10 @@ describe('GiveUp ', () => {
   test('should reset on click', () => {
     const wrapper = setup();
     const button = findByAttr(wrapper, 'give-up-button');
-    // button.simulate('click');
-    // expect(giveUp)
-    //    .toBeCalled();
+
+    button.simulate('click');
+
+    expect(giveUp)
+      .toHaveBeenCalled();
   });
 });

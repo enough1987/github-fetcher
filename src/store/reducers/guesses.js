@@ -36,6 +36,11 @@ const guesses = (state = defaultState, action) => {
         ...state,
         guesses: [ ...state.guesses, action.guess ]
       };
+    case guessActionTypes.REQUEST_FAILED:
+      return {
+        ...state,
+        failedrequests: action.failedrequests
+      };
     default:
       return state;
   }

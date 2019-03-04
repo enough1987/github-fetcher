@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 
 import { findByAttr } from '../../utils/testUtils';
 import Header from './Header';
-import { GuessWord } from '../../contaners/GuessWord/GuessWord';
 
 describe('Header ', () => {
   let defaultProps;
@@ -12,7 +11,7 @@ describe('Header ', () => {
   beforeEach(() => {
     defaultProps = { };
 
-    setup = (props = {}) => {
+    setup = (props = defaultProps) => {
       const wrapper = shallow(<Header { ...props } />);
 
       return wrapper;

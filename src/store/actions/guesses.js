@@ -8,7 +8,8 @@ export const guessActionTypes = {
   GET_CORRECT_GUESS: 'GET_CORRECT_GUESS',
   SET_IS_CORRECT_GUESS: 'SET_IS_CORRECT_GUESS',
   ADD_GUESS: 'ADD_GUESS',
-  GET_GUESSES: 'GET_GUESSES'
+  GET_GUESSES: 'GET_GUESSES',
+  REQUEST_FAILED: 'REQUEST_FAILED'
 };
 
 export const giveUp = () => ({
@@ -25,10 +26,16 @@ export const setIsCorrectGuess = (isCorrectGuess) => ({
 });
 
 export const getCorrectGuess = () => (dispatch) => {
-  axios.get('data.json').then((data) => {
-    const correctGuess = data.data.correctGuess;
-    dispatch(_getCorrectGuess(correctGuess));
-  });
+  axios.get('data.json')
+    .then((data) => { // eslint-disable-line promise/always-return
+      const correctGuess = data.data.correctGuess;
+      dispatch(_getCorrectGuess(correctGuess));
+    })
+    .catch(() => {
+      dispatch(failedRequest({
+        failGuessWorld: true
+      }));
+    });
 };
 
 const _getCorrectGuess = (correctGuess) => ({
@@ -52,4 +59,9 @@ export const addGuess = (guess) => (dispatch, getState) => {
 export const _addGuess = (guess) => ({
   type: guessActionTypes.ADD_GUESS,
   guess
+});
+
+export const failedRequest = (failedrequests) => ({
+  type: guessActionTypes.REQUEST_FAILED,
+  failedrequests
 });

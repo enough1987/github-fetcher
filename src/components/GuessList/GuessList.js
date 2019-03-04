@@ -1,3 +1,4 @@
+/* eslint react/no-array-index-key: 0 */ // --> OFF
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -5,7 +6,7 @@ class GuessList extends Component {
   render () {
     const guesses = this.props.guesses.length ? this.props.guesses.map((item, index) => {
       return <div data-test="component-guess-item" key={ index }>
-          {index } :  { item.guess } => { item.match }
+          { ` ${index}  :  ${item.guess} => ${item.match} ` }
       </div>;
     }) : 'There are no guesses yet';
 

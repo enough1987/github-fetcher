@@ -12,7 +12,7 @@ describe('Reset Guesses ', () => {
   beforeEach(() => {
     resetGuesses = jest.fn();
 
-    defaultProps = { resetGuesses };
+    defaultProps = { show: true, resetGuesses };
 
     setup = (props = defaultProps, initialState = {}) => {
       const store = storeFactory(initialState);
@@ -29,6 +29,7 @@ describe('Reset Guesses ', () => {
   test('should render a button', () => {
     const wrapper = setup();
     const button = findByAttr(wrapper, 'reset-guesses-button');
+
     expect(button)
       .toBeTruthy();
   });
@@ -36,8 +37,9 @@ describe('Reset Guesses ', () => {
   test('should reset on click', () => {
     const wrapper = setup();
     const button = findByAttr(wrapper, 'reset-guesses-button');
-    // button.simulate('click');
-    // expect(resetGuesses)
-    //    .toBeCalled();
+    button.simulate('click');
+
+    expect(resetGuesses)
+      .toHaveBeenCalled();
   });
 });

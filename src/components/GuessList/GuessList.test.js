@@ -29,5 +29,6 @@ test('component is showing all guesses', () => {
 test('test prop types', () => {
   const result = checkTypes(GuessList, { guesses: [] });
 
-  expect(result === undefined);
+  expect(result)
+    .toBeFalsy();
 });

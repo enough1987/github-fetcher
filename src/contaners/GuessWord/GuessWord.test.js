@@ -12,7 +12,8 @@ describe('GuessWord ', () => {
     defaultProps = {
       isCorrectGuess: false,
       correctGuess: 'truly',
-      guesses: []
+      guesses: [],
+      giveUp: false
     };
 
     setup = (props = defaultProps, initialState = {}) => {
@@ -29,7 +30,7 @@ describe('GuessWord ', () => {
   test('should render guess-word component', () => {
     const wrapper = setup();
     const component = findByAttr(wrapper, 'guess-word');
-    // expect( component )
-    //    .toBeTruthy();
+    expect(component)
+      .toBeTruthy();
   });
 });
