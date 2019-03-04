@@ -16,11 +16,11 @@ class GuessList extends Component {
 
     return (
         <div className="component-guess-list"
-        data-test="component-guess-list" >
-          { guesses }
-          <br />
-          { guessCount }
-      </div>
+          data-test="component-guess-list" >
+            { guesses }
+            <br />
+            { guessCount }
+        </div>
     );
   }
 }

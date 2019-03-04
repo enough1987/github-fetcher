@@ -13,20 +13,20 @@ export class ResetGuesses extends Component {
     if (!this.props.show) {
       return (
           <div className="component-reset-guesses-wrapper"
-          data-test="component-reset-guesses-wrapper" >
-        </div>
+            data-test="component-reset-guesses-wrapper" >
+          </div>
       );
     }
 
     return (
-      <div className="component-reset-guesses-wrapper"
-        data-test="component-reset-guesses-wrapper" >
+        <div className="component-reset-guesses-wrapper"
+          data-test="component-reset-guesses-wrapper" >
 
             <button
-          data-test="reset-guesses-button"
-          onClick={ this.handleOnReset } >
+              data-test="reset-guesses-button"
+              onClick={ this.handleOnReset } >
              Reset
-        </button>
+            </button>
 
         </div>
     );

@@ -5,9 +5,9 @@ class Congrats extends Component {
   render () {
     return (
         <div className="component-congrats"
-        data-test="component-congrats" >
-          { this.props.show ? 'Yes, you did it' : '' }
-      </div>
+          data-test="component-congrats" >
+            { this.props.show ? 'Yes, you did it' : '' }
+        </div>
     );
   }
 }

@@ -30,16 +30,16 @@ export class Counter extends Component {
   render () {
     return (
         <div className="Counter" >
-          <h1> current counter is { this.state.counter } </h1>
-          <button data-test="btn-increment"
-          onClick={ this.increment }>
+            <h1> current counter is { this.state.counter } </h1>
+            <button data-test="btn-increment"
+              onClick={ this.increment }>
             increment
-        </button>
-          <button data-test="btn-decrement"
-          onClick={ this.decrement }>
+            </button>
+            <button data-test="btn-decrement"
+              onClick={ this.decrement }>
             decrement
-        </button>
-      </div>
+            </button>
+        </div>
     );
   }
 }

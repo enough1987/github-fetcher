@@ -27,25 +27,25 @@ export class Input extends Component {
     if (!this.props.show) {
       return (
           <div className="component-input-wrapper"
-          data-test="component-input-wrapper" >
-        </div>
+            data-test="component-input-wrapper" >
+          </div>
       );
     }
 
     return (
-      <div className="component-input-wrapper"
-        data-test="component-input-wrapper" >
+        <div className="component-input-wrapper"
+          data-test="component-input-wrapper" >
 
             <input type='text'
-          data-test="component-input"
-          onChange={ this.handleInputChange }
-          value={ this.state.inputValue } />
+              data-test="component-input"
+              onChange={ this.handleInputChange }
+              value={ this.state.inputValue } />
 
             <button
-          data-test="component-button"
-          onClick={ this.handleOnGuess } >
+              data-test="component-button"
+              onClick={ this.handleOnGuess } >
              Guess
-        </button>
+            </button>
 
         </div>
     );

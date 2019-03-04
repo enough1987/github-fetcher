@@ -6,21 +6,21 @@ export class Header extends Component {
   render () {
     return (
         <div className="header"
-        data-test="header" >
-          <Link routeName="GuessWord"
-          data-test="GuessWord" >
+          data-test="header" >
+            <Link routeName="GuessWord"
+              data-test="GuessWord" >
             guesser
-        </Link>
+            </Link>
 
-          <span> / </span>
+            <span> / </span>
 
-          <Link routeName="Counter"
-          data-test="Counter">
+            <Link routeName="Counter"
+              data-test="Counter">
             counter
-        </Link>
-          <br />
-          <br />
-      </div>
+            </Link>
+            <br />
+            <br />
+        </div>
     );
   }
 }

@@ -13,20 +13,20 @@ export class GiveUp extends Component {
     if (!this.props.show) {
       return (
           <div className="component-give-up-wrapper"
-          data-test="component-give-up-wrapper">
-        </div>
+            data-test="component-give-up-wrapper">
+          </div>
       );
     }
 
     return (
-      <div className="component-give-up-wrapper"
-        data-test="component-give-up-wrapper" >
+        <div className="component-give-up-wrapper"
+          data-test="component-give-up-wrapper" >
 
             <button
-          data-test="give-up-button"
-          onClick={ this.handleOnGiveUp } >
+              data-test="give-up-button"
+              onClick={ this.handleOnGiveUp } >
              GiveUp
-        </button>
+            </button>
 
         </div>
     );

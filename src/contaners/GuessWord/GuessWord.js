@@ -15,15 +15,15 @@ export class GuessWord extends Component {
       : null;
 
     return (
-      <div className="guess-word"
-        data-test="guess-word" >
+        <div className="guess-word"
+          data-test="guess-word" >
 
-        { giveUp }
-        <Congrats show={ this.props.isCorrectGuess } />
-        <Input show={ !this.props.isCorrectGuess } />
-        <GuessList guesses={ this.props.guesses } />
-        <ResetGuesses show={ !this.props.isCorrectGuess } />
-        <GiveUp show={ !this.props.isCorrectGuess } />
+            { giveUp }
+            <Congrats show={ this.props.isCorrectGuess } />
+            <Input show={ !this.props.isCorrectGuess } />
+            <GuessList guesses={ this.props.guesses } />
+            <ResetGuesses show={ !this.props.isCorrectGuess } />
+            <GiveUp show={ !this.props.isCorrectGuess } />
 
         </div>
     );

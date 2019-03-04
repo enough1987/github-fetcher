@@ -19,16 +19,16 @@ class SidebarView extends Component {
     const descriptor = descriptors[ activeKey ];
 
     return (
-      <div className="App"
-        data-test="App" >
+        <div className="App"
+          data-test="App" >
             <Header />
 
-        <div>
-          <SceneView
-            component={ descriptor.getComponent() }
-            navigation={ descriptor.navigation }
-          />
-          </div>
+            <div>
+                <SceneView
+                  component={ descriptor.getComponent() }
+                  navigation={ descriptor.navigation }
+                />
+            </div>
         </div>
     );
   }
