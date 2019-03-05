@@ -35,7 +35,9 @@ it('getCorrectGuess get correct guess', async () => {
   moxios.stubRequest('data.json', {
     status: 200,
     response: {
-      correctGuess: 'truly'
+      data : {
+        correctGuess: 'truly'
+      }
     }
   });
 

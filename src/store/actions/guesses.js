@@ -45,7 +45,6 @@ const _getCorrectGuess = (correctGuess) => ({
 
 export const addGuess = (guess) => (dispatch, getState) => {
   const correctGuess = getState().guesses.correctGuess;
-
   const match = matchWords(guess.guess, correctGuess);
 
   if (guess.guess === correctGuess) {

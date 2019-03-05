@@ -12,7 +12,6 @@ it('guesses return default state if there are no action', () => {
 
 it('guesses return state if there are action type mutch', () => {
   const result = guesses({ test: 'test' }, { type: guessActionTypes.GET_CORRECT_GUESS, correctGuess: 'test' });
-
   expect(result)
     .toEqual({
       test: 'test',
