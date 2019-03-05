@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - '11'
+dist: trusty
+env:
+  - NODE_ENV = 'ci'
+cache:
+  directories:
+    - node_modules
+install:
+  - npm install
+jobs:  
+  include:
+    - stage: "lint"
+      name: "Lint"
+      script: npm run lint
+
+    - stage: test
+      name: "Unit tests"
+      script: npm run test
