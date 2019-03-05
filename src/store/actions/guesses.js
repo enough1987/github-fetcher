@@ -29,6 +29,7 @@ export const getCorrectGuess = () => (dispatch) => {
   axios.get('data.json')
     .then((data) => { // eslint-disable-line promise/always-return
       const correctGuess = data.data.correctGuess;
+
       dispatch(_getCorrectGuess(correctGuess));
     })
     .catch(() => {

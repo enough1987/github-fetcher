@@ -31,22 +31,22 @@ it('addGuess add guess to guesses', async () => {
     ]);
 });
 
-it('getCorrectGuess get correct guess', async () => {
+it('getCorrectGuess get correct guess', (done) => {
   moxios.stubRequest('data.json', {
     status: 200,
     response: {
-      data : {
-        correctGuess: 'truly'
-      }
+      correctGuess: 'truly-test'
     }
   });
 
-  await store.dispatch(getCorrectGuess(true));
+  store.dispatch(getCorrectGuess(true));
 
   moxios.wait(() => {
     const correctGuess = store.getState().guesses.correctGuess;
-
+    
     expect(correctGuess)
-      .toEqual('truly');
+      .toEqual('truly-test');
+      done();
   });
+
 });

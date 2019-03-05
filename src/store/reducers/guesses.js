@@ -8,6 +8,9 @@ const defaultState = {
 };
 
 const guesses = (state = defaultState, action) => {
+  if ( action.type == guessActionTypes.GET_CORRECT_GUESS ) {
+    console.log( state, action );
+  }
   switch (action.type) {
     case guessActionTypes.GIVE_UP:
       return {
