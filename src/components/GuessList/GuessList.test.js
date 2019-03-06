@@ -4,31 +4,35 @@ import { shallow } from 'enzyme';
 import { findByAttr, checkTypes } from '../../utils/testUtils';
 import GuessList from './GuessList';
 
-const setup = (props = { guesses: [] }, state = {}) => {
-  const wrapper = shallow(<GuessList { ...props }/>);
-  wrapper.setState(state);
-  return wrapper;
-};
+describe('GuessList ', () => {
 
-test('component is showing string when there are no guesses', () => {
-  const wrapper = setup();
-  const component = findByAttr(wrapper, 'component-guess-list');
+  const setup = (props = { guesses: [] }, state = {}) => {
+    const wrapper = shallow(<GuessList { ...props }/>);
+    wrapper.setState(state);
+    return wrapper;
+  };
 
-  expect(component.text())
-    .toEqual('There are no guesses yet');
-});
+  test('component is showing string when there are no guesses', () => {
+    const wrapper = setup();
+    const component = findByAttr(wrapper, 'component-guess-list');
 
-test('component is showing all guesses', () => {
-  const wrapper = setup({ guesses: [ { guess: 'rest', mutch: 3 } ] });
-  const components = findByAttr(wrapper, 'component-guess-item');
+    expect(component.text())
+      .toEqual('There are no guesses yet');
+  });
 
-  expect(components)
-    .toHaveLength(1);
-});
+  test('component is showing all guesses', () => {
+    const wrapper = setup({ guesses: [ { guess: 'rest', mutch: 3 } ] });
+    const components = findByAttr(wrapper, 'component-guess-item');
 
-test('test prop types', () => {
-  const result = checkTypes(GuessList, { guesses: [] });
+    expect(components)
+      .toHaveLength(1);
+  });
 
-  expect(result)
-    .toBeFalsy();
+  test('test prop types', () => {
+    const result = checkTypes(GuessList, { guesses: [] });
+
+    expect(result)
+      .toBeFalsy();
+  });
+
 });

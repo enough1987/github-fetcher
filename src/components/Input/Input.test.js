@@ -4,34 +4,38 @@ import { shallow } from 'enzyme';
 import { Input } from './Input';
 import { storeFactory, findByAttr } from '../../utils/testUtils';
 
-let addGuess;
-let getCorrectGuess;
-let defaultProps;
-let setup;
+describe('Input', () => {
 
-beforeEach(() => {
-  getCorrectGuess = jest.fn();
-  addGuess = jest.fn();
-  defaultProps = { show: true, addGuess, getCorrectGuess };
+  let addGuess;
+  let getCorrectGuess;
+  let defaultProps;
+  let setup;
 
-  setup = (props = {}, initialState = {}) => {
-    const store = storeFactory(initialState);
-    const wrapper = shallow(<Input { ...props } store={ store } />);
+  beforeEach(() => {
+    getCorrectGuess = jest.fn();
+    addGuess = jest.fn();
+    defaultProps = { show: true, addGuess, getCorrectGuess };
 
-    return wrapper;
-  };
-});
+    setup = (props = {}, initialState = {}) => {
+      const store = storeFactory(initialState);
+      const wrapper = shallow(<Input { ...props } store={ store } />);
 
-afterEach(() => {
-  addGuess.mockClear();
-  getCorrectGuess.mockClear();
-});
+      return wrapper;
+    };
+  });
 
-test('on click add guess', () => {
-  const props = defaultProps;
-  const initialState = { ...props, correctGuess: 'test' };
-  const wrapper = setup(initialState);
-  const button = findByAttr(wrapper, 'component-button');
-  button.simulate('click');
-  expect(addGuess).toHaveBeenCalled();
+  afterEach(() => {
+    addGuess.mockClear();
+    getCorrectGuess.mockClear();
+  });
+
+  test('on click add guess', () => {
+    const props = defaultProps;
+    const initialState = { ...props, correctGuess: 'test' };
+    const wrapper = setup(initialState);
+    const button = findByAttr(wrapper, 'component-button');
+    button.simulate('click');
+    expect(addGuess).toHaveBeenCalled();
+  });
+
 });

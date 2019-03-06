@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import { findByAttr, storeFactory } from '../../utils/testUtils';
 import { ResetGuesses } from './ResetGuesses';
 
-describe('Reset Guesses ', () => {
+describe('ResetGuesses ', () => {
   let resetGuesses;
   let defaultProps;
   let setup;

@@ -4,51 +4,55 @@ import { shallow } from 'enzyme';
 import { Counter } from './Counter';
 import { findByAttr } from '../../utils/testUtils';
 
-let getGuesses;
-let defaultProps;
-let setup;
+describe('Counter', () => {
+  
+  let getGuesses;
+  let defaultProps;
+  let setup;
 
-beforeEach(() => {
-  getGuesses = jest.fn();
-  defaultProps = { getGuesses };
+  beforeEach(() => {
+    getGuesses = jest.fn();
+    defaultProps = { getGuesses };
 
-  setup = (props = defaultProps, state = {}) => {
-    const wrapper = shallow(<Counter { ...props }/>);
-    wrapper.setState(state);
-    return wrapper;
-  };
-});
+    setup = (props = defaultProps, state = {}) => {
+      const wrapper = shallow(<Counter { ...props }/>);
+      wrapper.setState(state);
+      return wrapper;
+    };
+  });
 
-afterEach(() => {
-  getGuesses.mockClear();
-});
+  afterEach(() => {
+    getGuesses.mockClear();
+  });
 
-test('increment counter', () => {
-  const wrapper = setup();
-  const botton = findByAttr(wrapper, 'btn-increment');
-  botton.simulate('click');
+  test('increment counter', () => {
+    const wrapper = setup();
+    const botton = findByAttr(wrapper, 'btn-increment');
+    botton.simulate('click');
 
-  expect(wrapper.state('counter'))
-    .toEqual(1);
-});
+    expect(wrapper.state('counter'))
+      .toEqual(1);
+  });
 
-test('decrement counter', () => {
-  const wrapper = setup(defaultProps, { counter: 10 });
-  const botton = findByAttr(wrapper, 'btn-decrement');
-  botton.simulate('click');
-  botton.simulate('click');
+  test('decrement counter', () => {
+    const wrapper = setup(defaultProps, { counter: 10 });
+    const botton = findByAttr(wrapper, 'btn-decrement');
+    botton.simulate('click');
+    botton.simulate('click');
 
-  expect(wrapper.state('counter'))
-    .toEqual(8);
-});
+    expect(wrapper.state('counter'))
+      .toEqual(8);
+  });
 
-test('counter should not be less than zero', () => {
-  const wrapper = setup(defaultProps, { counter: 1 });
+  test('counter should not be less than zero', () => {
+    const wrapper = setup(defaultProps, { counter: 1 });
 
-  const botton = findByAttr(wrapper, 'btn-decrement');
-  botton.simulate('click');
-  botton.simulate('click');
+    const botton = findByAttr(wrapper, 'btn-decrement');
+    botton.simulate('click');
+    botton.simulate('click');
 
-  expect(wrapper.state('counter'))
-    .toEqual(0);
+    expect(wrapper.state('counter'))
+      .toEqual(0);
+  });
+
 });

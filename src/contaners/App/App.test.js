@@ -4,29 +4,33 @@ import { shallow } from 'enzyme';
 import { findByAttr } from '../../utils/testUtils';
 import { App } from './App';
 
-let getGuesses;
-let defaultProps;
-let setup;
+describe('App ', () => {
 
-beforeEach(() => {
-  getGuesses = jest.fn();
-  defaultProps = { getGuesses };
+  let getGuesses;
+  let defaultProps;
+  let setup;
 
-  setup = (props = defaultProps, state = {}) => {
-    const wrapper = shallow(<App { ...props }/>);
-    wrapper.setState(state);
-    return wrapper;
-  };
-});
+  beforeEach(() => {
+    getGuesses = jest.fn();
+    defaultProps = { getGuesses };
 
-afterEach(() => {
-  getGuesses.mockClear();
-});
+    setup = (props = defaultProps, state = {}) => {
+      const wrapper = shallow(<App { ...props }/>);
+      wrapper.setState(state);
+      return wrapper;
+    };
+  });
 
-test('init successfuly', () => {
-  const wrapper = setup();
-  const app = findByAttr(wrapper, 'App');
+  afterEach(() => {
+    getGuesses.mockClear();
+  });
 
-  expect(app)
-    .toBeTruthy();
+  test('init successfuly', () => {
+    const wrapper = setup();
+    const app = findByAttr(wrapper, 'App');
+
+    expect(app)
+      .toBeTruthy();
+  });
+
 });

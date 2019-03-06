@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { matchWords } from '../../helpers/index';
+import { matchWords } from '../../utils/helpers';
 
 export const guessActionTypes = {
   GIVE_UP: 'GIVE_UP',
