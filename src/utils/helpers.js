@@ -9,8 +9,6 @@ export const matchWords = (a, b) => {
   const right = new Set(b);
   const union = new Set();
 
-  console.log(a, ' --- ', b);
-
   right.forEach((r) => {
     left.forEach((l) => {
       if (l === r) {
