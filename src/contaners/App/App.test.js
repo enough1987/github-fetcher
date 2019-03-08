@@ -12,7 +12,7 @@ describe('App ', () => {
 
   beforeEach(() => {
     getGuesses = jest.fn();
-    defaultProps = { getGuesses };
+    defaultProps = { };
 
     setup = (props = defaultProps, state = {}) => {
       const wrapper = shallow(<App { ...props }/>);

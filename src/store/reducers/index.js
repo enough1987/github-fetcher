@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import guesses from './guesses';
+import language from './language';
 
 export default combineReducers({
-  guesses
+  language
 });

@@ -25,11 +25,4 @@ describe('Header ', () => {
       .toBeTruthy();
   });
 
-  test('should navigate on click on Link', () => {
-    const wrapper = setup();
-    const link = findByAttr(wrapper, 'GuessWord');
-    link.simulate('click');
-    // expect(location.pathname)
-    //    .toEqual(GuessWord.path);
-  });
 });

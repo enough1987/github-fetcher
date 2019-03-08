@@ -8,9 +8,8 @@ import {
 import { createBrowserApp } from '@react-navigation/web';
 
 import './App.css';
+import Language from '../Language/Language';
 import Header from '../../components/Header/Header';
-import Counter from '../Counter/Counter';
-import GuessWord from '../GuessWord/GuessWord';
 
 class SidebarView extends Component {
   render () {
@@ -42,8 +41,7 @@ SidebarView.propTypes = {
 const AppNavigator = createNavigator(
   SidebarView,
   SwitchRouter({
-    GuessWord,
-    Counter
+    Language
   }),
   {}
 );
