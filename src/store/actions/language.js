@@ -6,7 +6,7 @@ export const languageActionTypes = {
 };
 
 export const getLanguage = (language) => (dispatch) => {
-  axios.get(`https://api.github.com/search/repositories?q=stars:%3E1+language:${language}&sort=stars&order=desc&type=Repositories`)
+  axios.get(`https://api.github.com/search/repositories?q=stars:>1+language:${language}&sort=stars&order=desc&type=Repositories$page=1&per_page=100`)
     .then((data) => { // eslint-disable-line promise/always-return
       const repos = data.data.items;
       console.log(' data : ', data.data);

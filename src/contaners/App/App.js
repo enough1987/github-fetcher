@@ -6,12 +6,18 @@ import {
   SceneView
 } from '@react-navigation/core';
 import { createBrowserApp } from '@react-navigation/web';
+import '@devexpress/dx-react-grid-bootstrap4/dist/dx-react-grid-bootstrap4.css';
 
 import './App.css';
 import Language from '../Language/Language';
 import Header from '../../components/Header/Header';
 
 class SidebarView extends Component {
+
+  componentDidMount() {
+    document.title = "GitHub fetcher";
+  }
+
   render () {
     const { descriptors, navigation } = this.props;
     const activeKey = navigation.state.routes[ navigation.state.index ].key;
@@ -43,7 +49,11 @@ const AppNavigator = createNavigator(
   SwitchRouter({
     Language
   }),
-  {}
+  {
+    header: {
+      title: "GitHub fetcher"
+    }
+  }
 );
 
 export const App = createBrowserApp(AppNavigator);

@@ -4,47 +4,50 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { getLanguage } from '../../store/actions/language';
+import DataTable from '../../components/DataTable/DataTable';
+import Search from '../../components/Search/Search';
 
-const Repo = ({ repo, index }) =>
-  <tr>
-    <td>{index + 1}</td>
-    <td className="repo-name">{repo.name}</td>
-    <td>{repo.stargazers_count} Stars</td>
-  </tr>;
+const columns = [
+  { name: 'name', title: 'Repo name' },
+  { name: 'stargazers_count', title: 'Stars' },
+  { name: 'watchers_count', title: 'Watchers' }
+];
 
 class Language extends Component {
 
   constructor (props) {
     super(props);
-
-    this.props.getLanguage();
   }
+
+  search = (val) => {
+    this.props.getLanguage(val);
+  };
 
   render () {
     return (
         <div className="component-language"
           data-test="component-language" >
-            <table className="table table-striped">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Repo Name</th>
-                    <th>Stars Count</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {this.props.repos.map((repo, index) =>
-                    <Repo repo={repo} index={index} key={repo.id} />,
-                  )}
-                </tbody>
-            </table>
+          <Search 
+            search={this.search}
+          />
+          <DataTable 
+              rows={this.props.repos}
+              columns={columns}
+              styles={ {height: '1000px'} }
+          />
         </div>
     );
   }
 }
 
+Language.path = 'language';
+Language.navigationOptions = () => ({
+  title: 'language',
+  linkName: 'language'
+});
+
+
 Language.propTypes = {
-  
 };
 
 const mapStateToProps = state => ({
@@ -52,7 +55,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getLanguage: () => dispatch(getLanguage())
+  getLanguage: (val) => dispatch(getLanguage(val))
 });
 
 export default connect(
