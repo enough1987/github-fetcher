@@ -5,7 +5,6 @@ import { findByAttr } from '../../utils/testUtils';
 import { App } from './App';
 
 describe('App ', () => {
-
   let getGuesses;
   let defaultProps;
   let setup;
@@ -32,5 +31,4 @@ describe('App ', () => {
     expect(app)
       .toBeTruthy();
   });
-
 });

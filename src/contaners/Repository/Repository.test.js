@@ -2,21 +2,19 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import { findByAttr, checkTypes } from '../../utils/testUtils';
-import Language from './Language';
+import Repository from './Repository';
 
-describe('Language ', () => {
-
+describe('Repository ', () => {
   const setup = (props = { guesses: [] }, state = {}) => {
-    const wrapper = shallow(<Language { ...props }/>);
+    const wrapper = shallow(<Repository { ...props }/>);
     wrapper.setState(state);
     return wrapper;
   };
 
   test('test prop types', () => {
-    const result = checkTypes(Language, { });
+    const result = checkTypes(Repository, { });
 
     expect(result)
       .toBeFalsy();
   });
-
 });

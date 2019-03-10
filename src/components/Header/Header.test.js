@@ -21,8 +21,8 @@ describe('Header ', () => {
   test('should render header', () => {
     const wrapper = setup();
     const header = findByAttr(wrapper, 'header');
-    expect(header)
-      .toBeTruthy();
-  });
 
+    expect(header.exists())
+      .toBe(true);
+  });
 });

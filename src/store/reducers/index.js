@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import language from './language';
+import repository from './repository';
 
 export default combineReducers({
-  language
+  repository
 });

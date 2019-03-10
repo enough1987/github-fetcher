@@ -1,10 +1,9 @@
 import moxios from 'moxios';
 
-import { } from './language';
+import { } from './repository';
 import { storeFactory } from '../../utils/testUtils';
 
-describe('language ', () => {
-
+describe('repository ', () => {
   const initialState = { };
   let store;
 
@@ -28,5 +27,4 @@ describe('language ', () => {
     // import and pass your custom axios instance to this method
     moxios.uninstall();
   });
-
 });

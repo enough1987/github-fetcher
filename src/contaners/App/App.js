@@ -7,15 +7,15 @@ import {
 } from '@react-navigation/core';
 import { createBrowserApp } from '@react-navigation/web';
 import '@devexpress/dx-react-grid-bootstrap4/dist/dx-react-grid-bootstrap4.css';
+import { Container } from 'react-bootstrap';
 
 import './App.css';
-import Language from '../Language/Language';
+import Repository from '../Repository/Repository';
 import Header from '../../components/Header/Header';
 
 class SidebarView extends Component {
-
-  componentDidMount() {
-    document.title = "GitHub fetcher";
+  componentDidMount () {
+    document.title = 'GitHub fetcher';
   }
 
   render () {
@@ -24,9 +24,9 @@ class SidebarView extends Component {
     const descriptor = descriptors[ activeKey ];
 
     return (
-        <div className="App"
+        <Container fluid='true' className="App"
           data-test="App" >
-            <Header />
+            <Header data-test="header"/>
 
             <div>
                 <SceneView
@@ -34,7 +34,7 @@ class SidebarView extends Component {
                   navigation={ descriptor.navigation }
                 />
             </div>
-        </div>
+        </Container>
     );
   }
 }
@@ -47,11 +47,11 @@ SidebarView.propTypes = {
 const AppNavigator = createNavigator(
   SidebarView,
   SwitchRouter({
-    Language
+    Repository
   }),
   {
     header: {
-      title: "GitHub fetcher"
+      title: 'GitHub fetcher'
     }
   }
 );
