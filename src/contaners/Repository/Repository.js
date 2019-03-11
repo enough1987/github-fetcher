@@ -22,7 +22,6 @@ const columns = [
 ];
 
 class Repository extends Component {
-  
   search = (val) => {
     this.props.getRepository(val);
   };

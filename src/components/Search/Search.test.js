@@ -9,8 +9,8 @@ describe('Search ', () => {
   let setup;
 
   beforeEach(() => {
-    defaultProps = { 
-        search: jest.fn()
+    defaultProps = {
+      search: jest.fn()
     };
 
     setup = (props = defaultProps) => {
@@ -33,12 +33,12 @@ describe('Search ', () => {
     const input = findByAttr(wrapper, 'input-search');
 
     const event = {
-        target: { value: 'test' }
+      target: { value: 'test' }
     };
 
     input.simulate('change', event);
 
-    expect( wrapper.state('searchValue') )
+    expect(wrapper.state('searchValue'))
       .toBe('test');
   });
 
@@ -47,12 +47,12 @@ describe('Search ', () => {
     const input = findByAttr(wrapper, 'input-search');
 
     const event = {
-        target: { value: 'test' }
+      target: { value: 'test' }
     };
 
     input.simulate('change', event);
 
-    expect( wrapper.state('searchValue') )
+    expect(wrapper.state('searchValue'))
       .toBe('test');
   });
 
@@ -62,8 +62,7 @@ describe('Search ', () => {
 
     input.simulate('click');
 
-    expect( defaultProps.search )
-        .toBeCalled();
+    expect(defaultProps.search)
+      .toHaveBeenCalled();
   });
-
 });

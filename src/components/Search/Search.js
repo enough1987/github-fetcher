@@ -24,7 +24,7 @@ class Search extends Component {
       return (
           <div className="component-data-search"
             data-test="component-data-search" >
-              <Form inline 
+              <Form inline
                 data-test="form-search" >
                   <FormControl
                     type="text"

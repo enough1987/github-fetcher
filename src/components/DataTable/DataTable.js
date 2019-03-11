@@ -22,11 +22,11 @@ class DataTable extends Component {
               columns={ this.props.columns }
               getRowId={ getRowId }
               rootComponent={ Root }
-              data-test="data-grid" 
+              data-test="data-grid"
             >
                 <VirtualTable
                   height="auto"
-                  data-test="data-virtual-table" 
+                  data-test="data-virtual-table"
                 />
                 <Table
                 />

@@ -9,9 +9,9 @@ describe('DataTable ', () => {
   let setup;
 
   beforeEach(() => {
-    defaultProps = { 
-        columns: [],
-        rows: []
+    defaultProps = {
+      columns: [],
+      rows: []
     };
 
     setup = (props = defaultProps) => {
@@ -36,6 +36,4 @@ describe('DataTable ', () => {
     expect(table.exists())
       .toBe(true);
   });
-
-
 });
